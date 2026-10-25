@@ -4,146 +4,603 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Portfolio</title>
+  <meta name="description" content="Richard Mbithi Mutuku's professional portfolio">
+  <title>Richard Mbithi Mutuku | Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #202b3c;
+      background: #000000;
+      color: #f5f5f5;
       line-height: 1.7;
     }
-    header {
-      background: #101c35;
-      color: white;
-      padding: 18px 8%;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: #080808;
+      border-bottom: 1px solid #292929;
+      padding: 20px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 20px;
     }
-    header strong { font-size: 20px; }
-    nav { display: flex; flex-wrap: wrap; gap: 18px; }
-    nav a { color: white; text-decoration: none; }
+
+    .brand {
+      color: #d4af37;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #dddddd;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
     .hero {
-      background: #172746;
-      color: white;
-      padding: 90px 8%;
-      text-align: center;
+      padding: 100px 7%;
+      background: radial-gradient(circle at top right, #29200b, #000000 60%);
+      border-bottom: 1px solid #292929;
     }
-    .hero h1 { font-size: clamp(32px, 6vw, 52px); margin: 0; }
-    .hero p { max-width: 650px; margin: 18px auto; }
-    .button {
-      display: inline-block;
-      background: #78e0c1;
-      color: #10213b;
-      padding: 11px 22px;
-      border-radius: 6px;
-      text-decoration: none;
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow,
+    .section-label {
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
       font-weight: bold;
     }
-    main { max-width: 1000px; margin: auto; padding: 20px; }
-    section { padding: 42px 0; scroll-margin-top: 20px; }
-    h2 { color: #172746; font-size: 28px; }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.15;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #c5c5c5;
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #000;
+    }
+
+    .btn-outline {
+      border: 1px solid #d4af37;
+      color: #d4af37;
+    }
+
+    .container {
+      width: 86%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section {
+      padding: 65px 0;
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: clamp(27px, 4vw, 38px);
+      margin: 8px 0 25px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 22px;
+    }
+
     .card {
-      background: white;
-      border: 1px solid #e3e8f0;
+      background: #0d0d0d;
+      border: 1px solid #303030;
       border-radius: 12px;
-      padding: 22px;
-      margin: 14px 0;
+      padding: 25px;
     }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skills span {
-      background: #e1f5ef;
-      padding: 7px 13px;
-      border-radius: 20px;
+
+    .card p {
+      color: #c8c8c8;
+      margin-bottom: 15px;
     }
+
+    .fact {
+      padding: 13px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .fact:last-child {
+      border-bottom: none;
+    }
+
+    .fact strong {
+      display: block;
+      color: #d4af37;
+    }
+
+    .fact span {
+      color: #c5c5c5;
+      overflow-wrap: anywhere;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .item {
+      border-left: 3px solid #d4af37;
+    }
+
+    .item h3,
+    .project-card h3 {
+      color: #d4af37;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      color: #999999;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 22px;
+      color: #cccccc;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      border: 1px solid #65521b;
+      background: #17130a;
+      color: #e7d28a;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #0d0d0d;
+      border: 1px solid #303030;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .project-card p {
+      color: #c5c5c5;
+    }
+
+    .note {
+      color: #999999;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .contact {
+      background: #0d0d0d;
+      border: 1px solid #65521b;
+      border-radius: 14px;
+      padding: 35px;
+    }
+
+    .contact p {
+      color: #cccccc;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-links a {
+      border: 1px solid #d4af37;
+      color: #e7d28a;
+      padding: 10px 15px;
+      border-radius: 6px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links a:hover {
+      background: #d4af37;
+      color: #000000;
+    }
+
     footer {
-      background: #101c35;
-      color: white;
-      padding: 24px;
       text-align: center;
+      padding: 25px;
+      color: #999999;
+      border-top: 1px solid #292929;
+      font-size: 14px;
     }
-    a { overflow-wrap: anywhere; }
+
+    @media (max-width: 700px) {
+      .topbar {
+        padding: 18px 5%;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .about-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <strong>MY PORTFOLIO</strong>
-    <nav>
+
+  <header class="topbar">
+    <div class="brand">RICHARD MBITHI MUTUKU</div>
+
+    <nav aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h1>Hello, I'm Your Name</h1>
-    <p>
-      Welcome to my portfolio. I am a [your profession or field]
-      with an interest in [your main interests].
-    </p>
-    <a class="button" href="#about">Explore My Portfolio</a>
-  </div>
-
   <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="card">
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Industrial Mathematics Graduate</div>
+
+        <h1>
+          Hello, I'm <span>Richard Mbithi Mutuku</span>
+        </h1>
+
         <p>
-          Write a short introduction about yourself, your background,
-          your interests, and your career goals here.
+          An Industrial Mathematics graduate with a background in
+          mathematical modelling, statistical analysis, research,
+          report writing, and client service. I am interested in
+          applying quantitative and analytical skills to real-world
+          challenges.
         </p>
+
+        <div class="actions">
+          <a href="#experience" class="btn btn-primary">
+            View My Experience
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Contact Me
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>Your Qualification</h3>
-        <p>Your Institution | Your Graduation Year</p>
-        <p>Add your relevant coursework or achievements here.</p>
-      </div>
-    </section>
+    <div class="container">
 
-    <section id="skills">
-      <h2>My Skills</h2>
-      <div class="card skills">
-        <span>Communication</span>
-        <span>Teamwork</span>
-        <span>Problem Solving</span>
-        <span>Your Skill</span>
-      </div>
-    </section>
+      <section id="about">
+        <div class="section-label">Introduction</div>
+        <h2>About Me</h2>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <div class="card">
-        <h3>Project One</h3>
-        <p>Describe the project, your role, and what you achieved.</p>
-      </div>
-      <div class="card">
-        <h3>Project Two</h3>
-        <p>Add another project, assignment, or piece of work.</p>
-      </div>
-    </section>
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              I am an Industrial Mathematics graduate from Jomo Kenyatta
+              University of Agriculture and Technology. My training
+              covered mathematical modelling, numerical methods,
+              operations research, probability, and statistical analysis.
+            </p>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="card">
-        <p>Email: your-email@example.com</p>
-        <p>LinkedIn: Add your profile link here</p>
-      </div>
-    </section>
+            <p>
+              My experience includes microfinance operations, freelance
+              typing and copywriting, research, and report preparation.
+              I use analytical thinking, research, and clear communication
+              to support my work.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="fact">
+              <strong>Area of Study</strong>
+              <span>Industrial Mathematics</span>
+            </div>
+
+            <div class="fact">
+              <strong>University</strong>
+              <span>Jomo Kenyatta University of Agriculture &amp; Technology</span>
+            </div>
+
+            <div class="fact">
+              <strong>Graduation Period</strong>
+              <span>2019–2023</span>
+            </div>
+
+            <div class="fact">
+              <strong>Core Interests</strong>
+              <span>Data Analysis, Research, Modelling and Reporting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-label">Academic Background</div>
+        <h2>Education</h2>
+
+        <div class="timeline">
+
+          <article class="card item">
+            <h3>Bachelor of Science in Industrial Mathematics</h3>
+            <div class="meta">
+              Jomo Kenyatta University of Agriculture &amp; Technology | 2019–2023
+            </div>
+            <p>
+              Coursework included numerical methods, operations research,
+              probability, mathematical modelling, and statistical analysis.
+            </p>
+          </article>
+
+          <article class="card item">
+            <h3>Computer Packages</h3>
+            <div class="meta">
+              Kang’emi Institute College | 2018–2019
+            </div>
+          </article>
+
+          <article class="card item">
+            <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
+            <div class="meta">
+              Kangundo Boys High School | 2018
+            </div>
+            <p>Grade B− (62 points).</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-label">Career History</div>
+        <h2>Work Experience</h2>
+
+        <div class="timeline">
+
+          <article class="card item">
+            <h3>Loan Officer</h3>
+            <div class="meta">
+              Ndithini Community Development Association (NCDA), Microfinance | 2022–2023
+            </div>
+
+            <ul>
+              <li>
+                Assessed loan applications from individuals and groups,
+                checked client information, and reviewed repayment capacity.
+              </li>
+              <li>
+                Processed loan disbursements, monitored repayments,
+                and followed up with clients.
+              </li>
+              <li>
+                Explained loan products, interest, and repayment terms.
+              </li>
+              <li>Maintained accurate transaction records.</li>
+            </ul>
+          </article>
+
+          <article class="card item">
+            <h3>Freelance Service Provider</h3>
+            <div class="meta">Self-employed | 2019–Present</div>
+
+            <ul>
+              <li>Provided typing, research, and copywriting services.</li>
+              <li>
+                Conducted background research and prepared clear,
+                structured reports and documents.
+              </li>
+              <li>
+                Managed assignments and worked to meet client deadlines.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card item">
+            <h3>Academic Projects &amp; Coursework</h3>
+            <div class="meta">
+              Jomo Kenyatta University of Agriculture &amp; Technology | 2019–2023
+            </div>
+
+            <ul>
+              <li>
+                Applied mathematical modelling and statistical methods
+                to coursework problems.
+              </li>
+              <li>
+                Used SPSS, STATA, R, and Microsoft Excel for data entry,
+                descriptive statistics, and trend analysis.
+              </li>
+              <li>
+                Prepared technical reports covering methods, analysis,
+                and findings.
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-label">Strengths &amp; Tools</div>
+        <h2>My Skills</h2>
+
+        <div class="card skills">
+          <span class="skill">Mathematical Modelling</span>
+          <span class="skill">Statistical Analysis</span>
+          <span class="skill">SPSS</span>
+          <span class="skill">STATA</span>
+          <span class="skill">R</span>
+          <span class="skill">Microsoft Excel</span>
+          <span class="skill">Research</span>
+          <span class="skill">Report Writing</span>
+          <span class="skill">Copywriting</span>
+          <span class="skill">Document Preparation</span>
+          <span class="skill">Loan Assessment</span>
+          <span class="skill">Client Communication</span>
+          <span class="skill">Record Keeping</span>
+          <span class="skill">Problem Solving</span>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-label">Selected Work</div>
+        <h2>Academic &amp; Professional Work</h2>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <h3>Statistical Analysis</h3>
+            <p>
+              Coursework involving data entry, descriptive statistics,
+              trend analysis, and statistical software.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Research &amp; Technical Reports</h3>
+            <p>
+              Research, review of findings, and preparation of reports
+              and documents for academic and freelance assignments.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Mathematical Modelling</h3>
+            <p>
+              Academic work applying mathematical and quantitative
+              methods through modelling and numerical methods coursework.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Microfinance Client Services</h3>
+            <p>
+              Experience reviewing loan applications, explaining repayment
+              terms, monitoring repayments, and keeping transaction records.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="note">
+          Project summaries are based on the experience and coursework
+          listed in my CV. Specific project titles and files can be added
+          when available.
+        </p>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div class="section-label">Get in Touch</div>
+          <h2>Contact Me</h2>
+
+          <p>
+            For professional opportunities, research work, or freelance
+            services, you can reach me using the details below.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:mbithirichard026@gmail.com">
+              Email Me
+            </a>
+
+            <a href="tel:+254701255645">
+              0701 255 645
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <footer>
-    <p>© 2026 Your Name | Personal Portfolio</p>
+    <p>© 2026 Richard Mbithi Mutuku | Personal Portfolio</p>
   </footer>
+
 </body>
 </html>
