@@ -308,6 +308,41 @@
       .project-grid {
         grid-template-columns: 1fr;
       }
+      .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.profile-photo img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  display: block;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
 
       nav {
         gap: 12px;
